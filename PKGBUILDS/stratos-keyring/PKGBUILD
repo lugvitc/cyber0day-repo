@@ -1,0 +1,23 @@
+# Maintainer: ZeStig <o0vckutt@duck.com>
+
+pkgname=stratos-keyring
+pkgver=20241223
+pkgrel=1
+pkgdesc="StratOS keyring"
+arch=(any)
+url="https://stratos-linux.github.org"
+license=('GPL-3.0-or-later')
+install=$pkgname.install
+source=("stratos.gpg"
+        "stratos-revoked"
+        "stratos-trusted"
+        "$install")
+
+sha512sums=('SKIP'
+            'SKIP'
+            'SKIP'
+            'SKIP')
+package() {
+    install -D -m0644 -t "${pkgdir}"/usr/share/pacman/keyrings/ 'stratos'{.gpg,-trusted,-revoked}
+    sudo pacman-key --lsign-key 19A421C3D15C8B7C672F0FACC4B8A73AB86B9411
+}
