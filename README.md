@@ -1,4 +1,3 @@
-
 # StratOS-repo
 <!-- [![Open in Gitpod](https://gitpod.io/button/open-in-gitpod.svg)](https://gitpod.io/#https://github.com/StratOS-Linux/gnome-iso) -->
 
@@ -18,7 +17,7 @@ We've started building packages on a dedicated server. This repo may become out-
 ```
 [stratos]
 SigLevel = Optional TrustAll
-Server = https://repo.stratos-linux.org/
+Server = https://repo.lugvitc.net/
 ```
 
 You could also run `echo -e "[stratos]\nSigLevel = Optional TrustAll\nServer = https://repo.stratos-linux.org/" | sudo tee -a /etc/pacman.conf >/dev/null` to add these lines to the `pacman.conf` file.
@@ -35,3 +34,7 @@ You could also run `echo -e "[stratos]\nSigLevel = Optional TrustAll\nServer = h
 - Gitpod will start building the packages automatically. You can interrupt it via `Ctrl-c` and modify the repo (add/modify packages). 
 - [Edit build.sh](https://github.com/StratOS-Linux/repo/blob/main/build.sh#L161) to reflect your remote.
 - Add the new packages to the list in `build.sh` and simply run `docker-compose down && docker-compose up` in the integrated terminal. If you'd set `GITHUB_TOKEN` correctly, it should push to your fork, from where you can send us a PR.
+
+### Maintainers
+- [embeddingbits](https://github.com/embeddingbits)
+- [Derpitron](https://github.com/derpitron)
